@@ -2,14 +2,14 @@ import {useEffect, useState} from "react"
 import axios from "axios"
 import {useDebounce} from "./useDebounce";
 
-export function useGetLocation (newRequest) { //moscow - __
+export function useGetLocation (newRequest) {
 
 	const API_URL = 'https://autocomplete.travelpayouts.com/places2?types[]=city&term='
 
-	const [coordinates, setCoordinates] = useState({})
+	const [coordinates, setCoordinates] = useState()
 	const [city, setCity] = useState('')
 
-	const request = useDebounce(newRequest, 840) //mos
+	const request = useDebounce(newRequest, 420)
 
 	useEffect(() => {
 		if(!request) return
